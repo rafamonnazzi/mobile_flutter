@@ -8,7 +8,14 @@ class TrackListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final album = ModalRoute.of(context)!.settings.arguments as Album;
+    final route = ModalRoute.of(context);
+
+    if (route == null){
+      Navigator.pop(context);
+    }
+    
+    
+    final album = ModalRoute.of(context)?.settings.arguments as Album;
 
     
     return Scaffold(
